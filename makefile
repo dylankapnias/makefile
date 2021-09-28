@@ -123,7 +123,6 @@ $(TARGET): $(OBJECTS)
 # $(OBJECTDIR)/%.o: $(SORUCEDIR)/%.cpp is saying create a .o file for every .cpp file
 # $@ is the pattern matched target
 # $< is the pattern matched dependency
-$(OBJECTDIR)/%.o: $(SORUCEDIR)/%.cpp
 $(OBJECTDIR)/%.o: $(SORUCEDIR)/%.cpp $(DEPSDIR)/%.d
 	@echo "======================="
 	@echo "Compiling $<."
