@@ -28,11 +28,11 @@ SORUCEDIR := .# Insert path here i.e. src, if all in same file use'.' #
 # Include file path without final '/'
 INCDIR := .# Insert path here i.e. inc, if all in same file use '.' #
 # Object file path without final '/'
-OBJECTDIR := obj# Insert path here i.e. obj, if all in same file use '.' #
+OBJECTDIR := obj# Insert path here i.e. obj #
 # Dependency file path without final '/'
-DEPSDIR := dep# Insert path here i.e. dep, if all in same file use '.' #
+DEPSDIR := dep# Insert path here i.e. dep #
 # Log directory without final '/'
-LOGS := .logs# Insert path here, if all in same file use '.' #
+LOGS := .logs# Insert path here i.e. .logs #
 ###############################################
 # End of variables
 ###############################################
