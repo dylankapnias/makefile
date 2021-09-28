@@ -28,9 +28,9 @@ SORUCEDIR := .# Insert path here i.e. src, if all in same file use'.' #
 # Include file path without final '/'
 INCDIR := .# Insert path here i.e. inc, if all in same file use '.' #
 # Object file path without final '/'
-OBJECTDIR := obj# Insert path here i.e. obj #
+OBJECTDIR := .# Insert path here i.e. obj, if all in same file use '.' #
 # Dependency file path without final '/'
-DEPSDIR := dep# Insert path here i.e. dep #
+DEPSDIR := .# Insert path here i.e. dep, if all in same file use '.' #
 # Log directory without final '/'
 LOGS := .logs# Insert path here i.e. .logs #
 ###############################################
@@ -75,7 +75,9 @@ OBJECTS := $(patsubst %.cpp, $(OBJECTDIR)/%.o, $(notdir $(SOURCES)))
 # Dependency files
 DEPS := $(patsubst %.cpp, $(DEPSDIR)/%.d, $(notdir $(SOURCES)))
 # All created directories used
-ALLDIRS := $(OBJECTDIR) $(DEPSDIR) $(LOGS)
+ALLDIRS := $(sort $(OBJECTDIR) $(DEPSDIR) $(LOGS))
+# All remaining files
+ALLFILES := $(wildcard *.o) $(wildcard *.d) 
 ###############################################
 # End of generation 
 ###############################################
@@ -139,8 +141,8 @@ $(DEPSDIR)/%.d: ;
 # Cleaning directories of compiled files (.PHONY shows the makefile that the name is not a file and only a recipe)
 .PHONY: clean
 clean:
-	@rm -f $(TARGET)
-	@rm -fr $(ALLDIRS)
+	@rm -f $(TARGET) $(ALLFILES)
+	@rm -fr $(ALLDIRS) 2&> /dev/null || :
 	@echo "======================="
 	@echo "Cleaning done"
 	@echo "======================="
