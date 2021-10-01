@@ -1,3 +1,16 @@
+# Table Of Contents
+
+- [About](#generic-makefile-template-for-c)
+- [Variables](#variables)
+- [Flags]()
+- [Generated file lists](#generated-file-lists)
+- [Generated string lists](#generated-string-lists)
+- [Rules](#rules)
+- [.PHONY / .PRECIOUS Rules](#phony--precious-rules)
+- [Help](#help)
+
+----------------------------------
+
 # Generic makefile template for C++
 
 ### Auto dependency generation and file hierarchy support
@@ -45,7 +58,7 @@
 | ALLDIRS | Generating the dir list. |
 | ALLFILES | Generating the remaining file list. |
 
-## Generated strings list
+## Generated string lists
 ![](/assets/images/stringGen.jpg)
 | Name | Operation |
 |------|-----------|
@@ -53,25 +66,25 @@
 | LINK.o | Instruction string to use for linking. |
 | POSTCOMPILE | Instruction string to use after compiling. |
 
-## Recipes
+## Rules
 ![](/assets/images/compRules.jpg)
 | Name | Operation |
 |------|-----------|
 | all | The entry point of the makefile. |
-| $(ALLDIRS): | The recipe for creating the directiories. |
-| $(TARGET): $(OBJECTS) | The recipe for linking. |
-| $(OBJECTDIR)/%.o: $(SORUCEDIR)/%.cpp $(DEPSDIR)/%.d | The recipe for compiling. |
+| $(ALLDIRS): | The rule for creating the directiories. |
+| $(TARGET): $(OBJECTS) | The rule for linking. |
+| $(OBJECTDIR)/%.o: $(SORUCEDIR)/%.cpp $(DEPSDIR)/%.d | The rule for compiling. |
 
-## .PHONY / .PRECIOUS Recipes
+## .PHONY / .PRECIOUS Rules
 ![](/assets/images/pRules.jpg)
 | Name | Operation |
 |------|-----------|
 | $(DEPSDIR)/%.d |  Ensure the dep files were created. |
-| clean | The recipe to deleted all created files. |
-| run | The recipe to run the executable. |
-| errt | The recipe to display the error logs in one less. |
-| errs | The recipe to display the error logs in seperate less. |
-| dist | The recipe to create the tarball. |
+| clean | The rule to deleted all created files. |
+| run | The rule to run the executable. |
+| errt | The rule to display the error logs in one less. |
+| errs | The rule to display the error logs in seperate less. |
+| dist | The rule to create the tarball. |
 
 ## Help
 ![](/assets/images/help.jpg)
