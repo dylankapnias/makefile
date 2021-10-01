@@ -2,7 +2,7 @@
 
 - [About](#generic-makefile-template-for-c)
 - [Variables](#variables)
-- [Flags]()
+- [Flags](#flags)
 - [Generated file lists](#generated-file-lists)
 - [Generated string lists](#generated-string-lists)
 - [Rules](#rules)
@@ -44,6 +44,7 @@
 |------|-----------|
 | CPPFLAGS | A set of compiler flags to use. |
 | DEPFLAGS | A set of dependency creation flags to use. |
+| TESTFLAGS | A set of flags for linking against Google Test. |
 | LINKFLAGS | A set of linker flags to use. |
 | A_EXC_FLAGS | Generating the archive exclude flags. |
 
