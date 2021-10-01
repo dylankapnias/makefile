@@ -58,6 +58,11 @@ $@ \
 -MP \
 -MF \
 $(DEPSDIR)/$*.d.tmp
+# List of flags for unit testing
+TESTFLAGS := \
+-pthread \
+-lgtest \
+-lgtest_main
 # List of linking flags
 LINKFLAGS := \
 # List of archive exclude flags
