@@ -4,6 +4,7 @@
 
 * Copy this into the top level directory of the project.
 * Change the variables in the blocked out section to your specifications.
+* For usage go to the [help](#help) section
 
 ## Variables
 ![](/assets/images/variables.jpg)
@@ -70,3 +71,14 @@
 | errt | The recipe to display the error logs in one less. |
 | errs | The recipe to display the error logs in seperate less. |
 | dist | The recipe to create the tarball. |
+
+## Help
+![](/assets/images/help.jpg)
+| Name | Operation |
+|------|-----------|
+| make | Compiles and links the files in the specified directories. |
+| make run | Runs the specified executable. |
+| make clean | Removes all the files created during the make process. |
+| make dist | Creates an archive of the root directory, exxcluding the specified files. |
+| make errt | Displays the error logs in one less command. |
+| make errs | Displays the error logs in multiple less commands. |
