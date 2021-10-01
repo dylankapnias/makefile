@@ -8,18 +8,18 @@
 ## Variables
 ![](/assets/images/variables.jpg)
 
-| Name | Operation |
-|------|-----------|
-| SHELL | Sets the shell that the makefile will use. |
-| CC | The compiler that we will use. |
-| LD | The linker that we will use. |
+| Name | Operation | Examples |
+|------|-----------|----------|
+| SHELL | Sets the shell that the makefile will use. | SHELL := /bin/bash |
+| CC | The compiler that we will use. | CC := g++ |
+| LD | The linker that we will use. | LD := g++ |
 | TARGET | The name of the executable to create. |
-| ARCHNAME | The name of the tarball to create. |
-| A_EXC | The names of the files/folders to be excluded from tarball |
-| SOURCEDIR | The directory of the .cpp files. |
-| INCDIR | The directory of the .h files. |
-| OBJECTDIR | The directory to store the created .o files. |
-| DEPSDIR | The directory to store the created .d files. |
+| ARCHNAME | The name of the tarball to create. | ARCHNAME := projectArchive |
+| A_EXC | The names of the files/folders to be excluded from tarball | A_EXC := ./private ./admin priv.sh notArchiving.txt|
+| SOURCEDIR | The directory of the .cpp files. | SOURCEDIR := src or SOURCEDIR := src/cpp |
+| INCDIR | The directory of the .h files. | INCDIR := inc or INCDIR := src/h |
+| OBJECTDIR | The directory to store the created .o files. | OBJECTDIR := obj |
+| DEPSDIR | The directory to store the created .d files. | DEPSDIR := deps |
 | LOGS | The directory to store the error log files. |
 
 ## Flags
