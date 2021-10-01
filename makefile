@@ -11,6 +11,8 @@
 ###############################################
 # Change these variables to your specifications
 ###############################################
+# Test variable. 0 = no unit testing. 1 = yes unit testing
+TEST := 1
 # Setting shell
 SHELL=/bin/bash
 # Setting compiler
@@ -116,13 +118,20 @@ $(TARGET): $(OBJECTS)
 	@echo "======================="
 	@echo "Linking the target $@"
 	@echo "======================="
+
+ifeq ($(TEST), 1)
+	@$(LINK.o) $^ $(TESTFLAGS)
+else
 	@$(LINK.o) $^
+endif
+
 	@echo "-- Linking finished. --"
 
 # Compiling with a pattern rule:
 # $(OBJECTDIR)/%.o: $(SORUCEDIR)/%.cpp is saying create a .o file for every .cpp file
 # $@ is the pattern matched target
 # $< is the pattern matched dependency
+$(OBJECTDIR)/%.o: $(SORUCEDIR)/%.cpp
 $(OBJECTDIR)/%.o: $(SORUCEDIR)/%.cpp $(DEPSDIR)/%.d
 	@echo "======================="
 	@echo "Compiling $<."
@@ -171,3 +180,22 @@ dist:
 	@echo "======================="
 	@echo "Tarball created."
 	@echo "======================="
+
+# Help
+.PHONY: help
+help:
+	@echo "======================="
+	@echo "Help Section."
+	@echo "======================="
+	@echo "Commands :- (make) : (make run) : (make clean) : (make dist) : (make errt) : (make errs)"
+	@echo ""
+	@echo "make :- Compiles and links all the files in the specified directories."
+	@echo ""
+	@echo "make run :- Runs the target executable, i.e TARGET."
+	@echo ""
+	@echo "make clean :- Removes all directories and files created during make."
+	@echo ""
+	@echo "make dist :- Archives all files in the projects root directory, excluding the files specified, i.e A_EXC."
+	@echo ""
+	@echo "make errt :- Shows all error logs in one consecutive less command."
+	@echo "make errs :- Shows all error logs in multiple less commands."
