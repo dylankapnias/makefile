@@ -12,7 +12,7 @@
 # Change these variables to your specifications
 ###############################################
 # Test variable. 0 = no unit testing. 1 = yes unit testing
-TEST := 1
+TEST := 0
 # Setting shell
 SHELL=/bin/bash
 # Setting compiler
